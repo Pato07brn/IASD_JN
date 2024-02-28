@@ -1,0 +1,27 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "API FIREBASE",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pato07brn/IASD_JN.git"
+  },
+  "keywords": [
+    "API",
+    "FIREBASE"
+  ],
+  "author": "Bruno Nascimento",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pato07brn/IASD_JN/issues"
+  },
+  "homepage": "https://github.com/Pato07brn/IASD_JN#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase": "^10.8.0"
+  }
+}
