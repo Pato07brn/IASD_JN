@@ -11,11 +11,12 @@ export function Header() {
     
     const [width, setWidth] = useState(window.innerWidth);
     function upWidht() { setWidth(window.innerWidth) }
+    window.addEventListener('resize', upWidht);
     useEffect(() => {
-        upWidht()
-        window.addEventListener('resize', upWidht);
+        upWidht();
+        return
     }, [])
-
+    
     const [leftPosition, setLeftPosition] = useState("-100vw")
     function navBar() {
         if (leftPosition == 0) {
@@ -34,9 +35,10 @@ export function Header() {
         <Container>
             <main>
                 {
-                    width < 650 ? (
+                    width < 680 ? (
                         <button onClick={navBar}>
                             <RxHamburgerMenu size={45} />
+                            <span className="sr-only">Abrir menu</span>
                         </button>
                     ) : (<></>)
                 }
@@ -53,10 +55,11 @@ export function Header() {
                     </div>
                 </span>
                 {
-                    width < 650 ? (
+                    width < 680 ? (
                         <div className="menu" style={styleNav}>
                             <button onClick={navBar}>
                                 <RxHamburgerMenu color="white" size={45} />
+                                <span className="sr-only">Fechar menu</span>
                             </button>
                             <li>Anúncios</li>
                             <li>Departamentos</li>

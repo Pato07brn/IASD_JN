@@ -34,22 +34,24 @@ export function Footer() {
                     <div>
                         <h3>Programação</h3>
                         <table >
-                            <tr>
-                                <td>Sábado</td>
-                                <td>09h00 - Escola Sabatina</td>
-                            </tr>
-                            <tr>
-                                <td>Sábado</td>
-                                <td>10h30 - Culto Divino</td>
-                            </tr>
-                            <tr>
-                                <td>Domingo</td>
-                                <td>19h30 - Culto de Adoração</td>
-                            </tr>
-                            <tr>
-                                <td>Quarta-Feira</td>
-                                <td>19h30 - Culto de Oração</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td>Sábado</td>
+                                    <td>09h00 - Escola Sabatina</td>
+                                </tr>
+                                <tr>
+                                    <td>Sábado</td>
+                                    <td>10h30 - Culto Divino</td>
+                                </tr>
+                                <tr>
+                                    <td>Domingo</td>
+                                    <td>19h30 - Culto de Adoração</td>
+                                </tr>
+                                <tr>
+                                    <td>Quarta-Feira</td>
+                                    <td>19h30 - Culto de Oração</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>

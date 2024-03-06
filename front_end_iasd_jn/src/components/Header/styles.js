@@ -15,7 +15,7 @@ export const Container = styled.header`
             color: ${({ theme }) => theme.COLORS.WHITE};
         }
         > button{
-            position: fixed;
+            position: absolute;
             top: 15px;
             left: 15px;
         }
@@ -32,12 +32,26 @@ export const Container = styled.header`
         display: flex;
         justify-content: space-between;
         list-style: none;
+        li{
+            cursor: pointer;
+        }
     }
 
     .flex{
         display: flex;
         align-items: center;
         gap: 1em;
+    }
+    .sr-only{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
     }
     .salvemos{
         position: absolute;
@@ -59,6 +73,7 @@ export const Container = styled.header`
         background-image: url(${bg_nvabar});
         color: ${({ theme }) => theme.COLORS.WHITE};
         transition: all 500ms;
+        z-index: 1;
 
         button{
             position: relative;
