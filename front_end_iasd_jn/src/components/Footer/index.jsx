@@ -58,8 +58,8 @@ export function Footer() {
                 <div className="social-links">
                     <section>Social</section>
                     <section>
-                        <a href="https://www.youtube.com/@Iasdjardimnovo" target="_blank"><CiInstagram size={50} /></a>
-                        <a href="https://www.instagram.com/ministerio_jovem_jardim_novo/"><CiYoutube size={50} /></a>
+                        <a href="https://www.instagram.com/ministerio_jovem_jardim_novo/" target="_blank"><CiInstagram size={50} /></a>
+                        <a href="https://www.youtube.com/@Iasdjardimnovo"><CiYoutube size={50} /></a>
                         <a href="#"><PiChatCircleDots size={50} /></a>
                     </section>
                 </div>
