@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
+import bg from "../assets/Salvemos-2.png"
 
 export default createGlobalStyle`
     *{
@@ -9,8 +10,11 @@ export default createGlobalStyle`
         font-style: normal;
     }
     body{
-        background: rgb(211,47,221);
-        background: linear-gradient(90deg, rgba(211,47,221,1) 33%, rgba(219,165,165,1) 63%, rgba(255,0,149,1) 100%);
+        background: #ffffff url(${bg}) center center/cover no-repeat fixed;
+    }
+    button{
+        background: none;
+        border: none;
     }
 
 `

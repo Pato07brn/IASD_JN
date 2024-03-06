@@ -13,7 +13,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <GlobalStyles/>
         <Home />
-      
     </ThemeProvider>
   </React.StrictMode>,
 )
