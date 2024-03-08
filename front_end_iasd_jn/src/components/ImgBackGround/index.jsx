@@ -5,9 +5,9 @@ export function ImgBack({ title, path, link = "neida" }) {
 
     return (
         <Container>
-            <div class="imagem-com-sobreposicao">
+            <div className="imagem-com-sobreposicao">
                 <img src={path} alt="Imagem de anúncio" />
-                <div class="texto-sobreposto">
+                <div className="texto-sobreposto">
                     {title}
                 </div>
             </div>

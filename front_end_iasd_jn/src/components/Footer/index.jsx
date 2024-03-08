@@ -63,7 +63,7 @@ export function Footer() {
                         <a href="#"><PiChatCircleDots size={50} /></a>
                     </section>
                 </div>
-                <div className="copyright">© 2018 Igreja Adventista do Sétimo Dia • Todos os direitos reservados</div>
+                <div className="copyright">© 2024 Igreja Adventista do Sétimo Dia • Todos os direitos reservados</div>
             </main>
         </Container>
     )
