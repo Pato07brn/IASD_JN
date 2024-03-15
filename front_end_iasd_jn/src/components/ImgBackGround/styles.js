@@ -43,6 +43,6 @@ export const Container = styled.section`
 
 
     @media screen and (max-width: 650px) {   
-        font-size: 1em; 
+        font-size: 2.6em; 
     }
 `
