@@ -38,6 +38,7 @@ export const Container = styled.header`
     }
 
     .flex{
+        cursor: pointer;
         display: flex;
         align-items: center;
         gap: 1em;

@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import axios from "axios"
 import { Container } from "./styles";
 
-import { Header } from "../../components/Header";
-import { Section } from "../../components/Section";
-import { ImgBack } from "../../components/ImgBackGround";
-import { Footer } from "../../components/Footer";
+import { Header } from  "../../../components/Header";
+import { Section } from "../../../components/Section";
+import { ImgBack } from "../../../components/ImgBackGround";
+import { Footer } from  "../../../components/Footer";
 
 //Imagem de teste
-import imgtest from "../../assets/Fundo_Instagram.png";
+import imgtest from "../../../assets/Fundo_Instagram.png";
 
 export function Home() {
     const [ytLink, setYt] = useState({});

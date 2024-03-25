@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { RxHamburgerMenu } from "react-icons/rx";
 
+import { useNavigate } from "react-router-dom";
+
 import { Container } from "./styles"
 import img_logo from "../../assets/logo-iasd-preto.svg"
 import img_salvemos from "../../assets/Salvemos-ct.png";
@@ -9,6 +11,8 @@ import bg_nvabar from "../../assets/bg_navbar.png"
 
 export function Header() {
     
+    const navigate = useNavigate()
+
     const [width, setWidth] = useState(window.innerWidth);
     function upWidht() { setWidth(window.innerWidth) }
     window.addEventListener('resize', upWidht);
@@ -44,7 +48,7 @@ export function Header() {
                 }
                 <img className="salvemos" src={img_salvemos} alt="" />
                 <span>
-                    <div className="flex">
+                    <div className="flex" onClick={() => navigate("/")} >
                         <div>
                             <img src={img_logo} />
                         </div>
@@ -61,19 +65,19 @@ export function Header() {
                                 <RxHamburgerMenu color="white" size={45} />
                                 <span className="sr-only">Fechar menu</span>
                             </button>
-                            <li>Anúncios</li>
-                            <li>Departamentos</li>
-                            <li>Meditação</li>
-                            <li>Lição</li>
-                            <li>Fotos</li>
+                            <li onClick={() => navigate("/anuncios")}>Anúncios</li>
+                            <li onClick={() => navigate("/departamentos")}>Departamentos</li>
+                            <li onClick={() => navigate("/meditacoes")}>Meditação</li>
+                            <li onClick={() => navigate("/licoes")}>Lição</li>
+                            <li onClick={() => navigate("/fotos")}>Fotos</li>
                         </div>
                     ) : (
                         <ul>
-                            <li>Anúncios</li>
-                            <li>Departamentos</li>
-                            <li>Meditação</li>
-                            <li>Lição</li>
-                            <li>Fotos</li>
+                            <li onClick={() => navigate("/anuncios")}>Anúncios</li>
+                            <li onClick={() => navigate("/departamentos")}>Departamentos</li>
+                            <li onClick={() => navigate("/meditacoes")}>Meditação</li>
+                            <li onClick={() => navigate("/licoes")}>Lição</li>
+                            <li onClick={() => navigate("/fotos")}>Fotos</li>
                         </ul>
                     )
                 }
