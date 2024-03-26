@@ -9,7 +9,7 @@ export const Container = styled.main`
 `;
 
 export const Form = styled.form`
-    width: 60%;
+    width: 40em;
     height: 50%;
     padding: 0 2em;
     border-radius: 50px;

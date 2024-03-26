@@ -8,7 +8,7 @@ export function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="*" element={<AppRoutes />} />
+                <Route path="/*" element={<AppRoutes />} />
                 <Route path="/admin/*" element={<AdmRoutes />} />
             </Routes>
         </BrowserRouter>
