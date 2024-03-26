@@ -1,11 +1,13 @@
-import { Container } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 import { CiInstagram, CiYoutube } from "react-icons/ci";
 import { PiChatCircleDots, PiEnvelopeLight } from "react-icons/pi";
 import { TbBuildingChurch } from "react-icons/tb";
 
+import { Container } from "./styles";
 
 export function Footer() {
+    const navigate = useNavigate()
     return (
         <Container>
             <main>
@@ -64,6 +66,7 @@ export function Footer() {
                     </section>
                 </div>
                 <div className="copyright">© 2024 Igreja Adventista do Sétimo Dia • Todos os direitos reservados</div>
+                <div className="admin" onClick={() => navigate("/admin/")}>admin</div>
             </main>
         </Container>
     )
