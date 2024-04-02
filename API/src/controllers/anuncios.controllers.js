@@ -60,7 +60,7 @@ class AnunciosController {
     }
 
     const response = await db.collection('anuncios').doc(anuID).set(dataUp,{ merge: true });
-    console.log(response);
+    
     return res.status(202).json({ "ResponseText": "Anuncio atualizado com sucesso" });
   }
 }

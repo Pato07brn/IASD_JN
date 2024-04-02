@@ -5,9 +5,6 @@ const verifyToken = require("../middlewares/authEnsure")
 
 const sessionRouter = Router()
 
-sessionRouter.post("/", SessionController.create)
-
-//teste
-sessionRouter.post("/teste", verifyToken)
+sessionRouter.post("/", verifyToken, SessionController.index)
 
 module.exports = sessionRouter

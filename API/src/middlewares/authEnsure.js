@@ -4,27 +4,22 @@ const appError = require("../utils/AppError")
 const { getAuth } = require("firebase-admin/auth")
 
 async function verifyToken(req, res, next) {
-    const authtoken = req.headers.authorization
+    const authtoken = req.headers.autorization;
 
-    const [, token] = authtoken.split(" ");
+    if (!authtoken) throw new appError("Token não informado", 402);
 
-    if (!token) throw new appError("Token não informado", 401)
-    console.log(typeof token);
-
-
-    getAuth().verifyIdToken(token)
+    await getAuth()
+        .verifyIdToken(authtoken)
         .then((decodedToken) => {
             const uid = decodedToken.uid;
             req.user = {
-                id: String(token)
-            }
+                id: String(uid)
+            };
             return next();
         })
         .catch((error) => {
-            if (error) {
-                res.status(402).json(error.data.message)
-            }
-            throw new appError("deu ruim", 401)
+            console.log(error.message);
+            throw new appError("Token invalido", 402);
         });
 }
 

@@ -1,22 +1,22 @@
-require("../database/firebase")
-const firebase = require("firebase-admin")
-const appError = require("../utils/AppError")
-const { getAuth } = require("firebase-admin/auth")
+require("../database/firebase");
+const firebase = require("firebase-admin");
+const appError = require("../utils/AppError");
+const { getAuth } = require("firebase-admin/auth");
+
+const db = firebase.firestore()
 
 class Sessions {
-    async create(req, res) {
-        const { uid } = req.body;
-        getAuth().getUser(uid)
-            .then((userCredential) => {
-                const user = userCredential;
-                res.status(201).json(user)
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                throw new appError(errorMessage, errorCode)
-            });
+    async index(req, res) {
+        const idToken = req.user.id;
+
+        const snap = await db.collection("users").where("UID", "==", idToken).get()
+        const show = snap.docs.map((doc) => (
+            doc.data()
+        ));
+
+        return res.status(202).json({ show });
     }
+
 }
 
 module.exports = Sessions;
