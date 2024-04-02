@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { api } from "../../../services/api";
+import { useEffect, useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 
@@ -10,13 +11,13 @@ import { Input } from "../../../components/Input"
 import { Button } from "../../../components/Button"
 
 export function Login() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const { SignIn } = useAuth()
+    const { SignIn } = useAuth();
 
-    function handlerSubmit() {
-        SignIn({email, password})
+    async function handlerSubmit() {
+        SignIn({email, password});
     }
 
     return (

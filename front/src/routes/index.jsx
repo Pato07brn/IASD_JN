@@ -6,7 +6,7 @@ import { AppRoutes } from "./app.routes"
 export function Router() {
 
     return (
-        <BrowserRouter basename="/">
+        <BrowserRouter>
             <Routes>
                 <Route path="/*" Component={AppRoutes} />
                 <Route path="/admin/*" Component={AdmRoutes} />
