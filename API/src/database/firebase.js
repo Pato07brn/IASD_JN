@@ -1,6 +1,5 @@
-const firebaseConfig = require("../config/jardim-novo-firebase-adminsdk.json")
+const firebaseConfig = require("../config/firebase.config");
 const firebase = require("firebase-admin")
-
 // Initialize Firebase
 const connection = firebase.initializeApp({
     credential: firebase.credential.cert(firebaseConfig),

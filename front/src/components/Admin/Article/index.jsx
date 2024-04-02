@@ -3,11 +3,10 @@ import { LuPenSquare, LuDelete } from "react-icons/lu";
 
 import { Container } from "./styles";
 
-export function Article({ title, tags = [], description, colorTag = "red", children, ...rest }) {
+export function Article({ title, tags = [], description, children, ...rest }) {
 
     return (
         <Container>
-            {colorTag}
             <div className="content">
                 <h1>{title}</h1>
                 <div className="description">{description}</div>
