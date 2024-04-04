@@ -1,8 +1,7 @@
-import { useContext, useEffect, useState } from "react";
-
-import { useNavigate } from "react-router-dom"
-import { AcessContext } from "../../../hooks/acess";
 import { api } from "../../../services/api";
+import { UseAcess } from "../../../hooks/acess";
+import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react";
 
 import { Button } from "../../Button";
 import { Article } from "../../Admin/Article";
@@ -11,7 +10,7 @@ import { Container } from "./styles";
 export function Content() {
     const navigate = new useNavigate();
 
-    const { bd, localData, updateLocalData } = useContext(AcessContext);
+    const { bd, localData, updateLocalData } = UseAcess();
     const [data, setData] = useState([]);
 
     //Verifica o localStorage
@@ -38,10 +37,10 @@ export function Content() {
     return (
         <Container>
             <nav>
-                <div>Filtros:(no futuro)</div>
+                <div>Filtros: (no futuro)</div>
                 <Button
-                    width="30%"
-                    title={"Novo " + bd}
+                    width="auto"
+                    title={"Novo: " + bd}
                     bcColor={"#d18121"}
                     onClick={()=>{
                         navigate("./new")

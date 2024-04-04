@@ -16,6 +16,11 @@ export const Container = styled.div`
         color: ${({ theme }) => theme.COLORS.WHITE};
         width: auto;
     }
+    .head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     form{
         font-weight: bold;
         .title{
@@ -28,9 +33,8 @@ export const Container = styled.div`
             border-radius: 25px;
         }
     }
-
     .content{
-        width: 70%;
+        width: 100%;
     }
     .description{
         width: 100%;
@@ -55,9 +59,9 @@ export const Container = styled.div`
         cursor: pointer;
         transition: all 0.3s ease-in-out;
     }
-    .tags span{
-    }
     .actions{
+        display: flex;
+        cursor: pointer;
         > svg{
             margin: 0.5em;
         }

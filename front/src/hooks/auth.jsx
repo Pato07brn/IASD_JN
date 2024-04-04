@@ -28,8 +28,8 @@ function AuthProvider({ children }) {
     async function SinOut() {
         getAuth().signOut().then(() => {
             localStorage.removeItem("@IASDJNAuthUser:");
+            localStorage.removeItem("@IASD_DATA:");
             sessionStorage.removeItem("@IASDJNAuthToken:");
-
             setData({})
         })
             .catch(() => {

@@ -16,4 +16,12 @@ export const Container = styled.div`
             background-color: ${({ theme }) => theme.COLORS.GRAY_300};
         }
     }
+    @media screen and (max-width: 425px){
+        nav{
+            > div{
+                margin: 10px;
+                font-size: 1.5em;
+            }
+    }
+    }
 `;

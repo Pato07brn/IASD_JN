@@ -1,39 +1,47 @@
+import { api } from "../../../services/api";
+import { useAuth } from "../../../hooks/auth";
+import { UseAcess } from "../../../hooks/acess";
 import { useState, useEffect } from "react";
 
-import { useAuth } from "../../../hooks/auth";
-
+import { Brand } from "../Brand";
 import { CiLogout } from "react-icons/ci";
-import { LuMenu } from "react-icons/lu";
-
-import { Container } from "./styles"
-import { api } from "../../../services/api";
+import { Container } from "./styles";
 
 export function Header() {
+    const { setNavBar } = UseAcess();
+    const { SinOut } = useAuth();
+    const [userName, setUserName] = useState("");
 
-    const { SinOut } = useAuth()
-
-    const [userName, setUserName] = useState("")
-
-    async function menuHandler() {
-        console.log('acessou');
-    }
+    const [width, setWidth] = useState(window.innerWidth);
+    function upWidht() { setWidth(window.innerWidth) }
+    window.addEventListener('resize', upWidht);
     
     useEffect(() => {
+        upWidht();
+        console.log(width);
+        return
+    }, [])
+
+    async function menuHandler() {
+        setNavBar(true);
+    }
+
+    useEffect(() => {
         async function getName() {
-                const name = await api.post("/session");                
-                setUserName(name.data.show[0].nome);
+            const name = await api.post("/session");
+            setUserName(name.data.show[0].nome);
+            if (!name) {
+                SinOut();
+            }
         }
         getName();
-    }, [])
+    }, []);
 
 
     return (
         <Container>
             <main>
-                <div className="home-logo">
-                    <LuMenu onClick={() => menuHandler()} />
-                    IASDJN
-                </div>
+                <Brand windowWidht={width} handler={() => menuHandler()} />
                 <div className="user">
                     Bem-vindo: {userName}
                 </div>
@@ -42,5 +50,5 @@ export function Header() {
                 </div>
             </main>
         </Container>
-    )
+    );
 }

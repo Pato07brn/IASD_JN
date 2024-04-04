@@ -33,8 +33,6 @@ export function Header() {
     const styleNav = {
         left: leftPosition
     }
-
-
     return (
         <Container>
             <main>

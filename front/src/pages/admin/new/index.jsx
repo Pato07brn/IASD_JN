@@ -1,7 +1,6 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AcessContext } from "../../../hooks/acess"
-
+import { UseAcess } from "../../../hooks/acess";
 import { api } from "../../../services/api";
 
 import { Input } from "../../../components/Input";
@@ -9,17 +8,14 @@ import { Button } from "../../../components/Button";
 import { TextArea } from "../../../components/TextArea";
 import { NoteItem } from "../../../components/Admin/NoteItem";
 import { ButtonText } from "../../../components/ButtonText";
-
-
 import { Container } from "./styles";
 
 export function New() {
-    const { updateLocalData } = useContext(AcessContext);
-    const navigate = new useNavigate();
-
+    const { updateLocalData } = UseAcess();
     const [title, setTitle] = useState();
     const [description, setDescription] = useState();
     
+    const navigate = new useNavigate();
     
     //Tags
     const [tags, setTags] = useState([]);
