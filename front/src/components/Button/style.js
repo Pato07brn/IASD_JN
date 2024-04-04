@@ -1,12 +1,12 @@
 import styled from "styled-components"
 
 export const Container = styled.button`
-    width: 100%;
+    width: ${({width}) => width};
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background-color: ${({ theme }) => theme.COLORS.RED2};
+    background-color: ${({ theme, $bccolor }) => $bccolor ? $bccolor : theme.COLORS.RED2};
     color: ${({ theme }) => theme.COLORS.WHITE};
 
     padding: 0.6em;

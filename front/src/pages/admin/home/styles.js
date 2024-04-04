@@ -1,7 +1,7 @@
 import {styled} from "styled-components"
 
 export const Container = styled.main`
-    background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
+    background-color: transparent;
     height: 100vh;
     width: 100%;
     display: grid;

@@ -1,5 +1,10 @@
 {
   "dependencies": {
     "firebaseui": "^6.1.0"
+  },
+  "scripts": {
+    "start": "node ./API/src/server.js " ,
+    "API": "cd API && npm run test",
+    "front": "cd front && npm run dev"
   }
 }

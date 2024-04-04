@@ -21,6 +21,8 @@ export const Container = styled.div`
         background-color: transparent;
         border: 0;
 
+        font-size: ${({ size }) => size ? size: "1.6em"};
+
         &::placeholder{
             color: ${({ theme }) => theme.COLORS.GRAY_100};
         }

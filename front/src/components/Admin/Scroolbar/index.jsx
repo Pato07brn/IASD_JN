@@ -23,10 +23,8 @@ export function Scroolbar() {
                 </div>
                 <ul className="actions">
                     <ButtonText title={"Anúncios"}      onClick={()=>updateAcess("Anúncios")}/>
-                    <ButtonText title={"Departamentos"} onClick={()=>updateAcess("Departamentos")}/>
                     <ButtonText title={"Meditação"}     onClick={()=>updateAcess("Meditação")}/>
                     <ButtonText title={"Lição"}         onClick={()=>updateAcess("Lição")}/>
-                    <ButtonText title={"Fotos"}         onClick={()=>updateAcess("Fotos")}/>
                 </ul>
 
             </main>

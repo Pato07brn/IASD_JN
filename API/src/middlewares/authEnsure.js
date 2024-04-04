@@ -18,8 +18,8 @@ async function verifyToken(req, res, next) {
             return next();
         })
         .catch((error) => {
-            console.log(error.message);
-            throw new appError("Token invalido", 402);
+            res.status(402).json("Token inválido ou expirado");
+            throw new appError("Token invalido ou expirado", 402);
         });
 }
 
