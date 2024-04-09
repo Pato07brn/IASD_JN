@@ -5,6 +5,7 @@ export const Container = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 
     background-color: ${({ theme, $bccolor }) => $bccolor ? $bccolor : theme.COLORS.RED2};
     color: ${({ theme }) => theme.COLORS.WHITE};

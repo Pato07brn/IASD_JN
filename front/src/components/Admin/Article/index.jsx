@@ -1,8 +1,8 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { LuPenSquare, LuDelete, LuCheckCircle, LuXCircle } from "react-icons/lu";
 
 import { api } from "../../../services/api";
-import { AcessContext } from "../../../hooks/acess";
+import { UseAcess } from "../../../hooks/acess";
 
 import { Container } from "./styles";
 
@@ -21,7 +21,7 @@ export function Article({ title, tags = [], anuId, description = String, autor =
     const [newTag, setNewTag] = useState('');
 
     //Context
-    const { updateLocalData } = useContext(AcessContext);
+    const { updateLocalData } = UseAcess();
 
     //AUX
     let descriptioAux = '';
@@ -82,12 +82,30 @@ export function Article({ title, tags = [], anuId, description = String, autor =
         return (
             <Container>
                 <form className="content">
-                    <Input
-                        size={"2em"}
-                        autoFocus={true}
-                        value={titleEd}
-                        onChange={(event) => { setTitleEd(event.target.value) }}
-                    />
+                    <span className={"head"}>
+                        <Input
+                            size={"2em"}
+                            autoFocus={true}
+                            value={titleEd}
+                            onChange={(event) => { setTitleEd(event.target.value) }}
+                        />
+                        <div className="actions">
+                            <LuCheckCircle
+                                size={30}
+                                color={"#09B980"}
+                                onClick={() => {
+                                    handlerUpdate();
+                                }}
+                            />
+                            <LuXCircle
+                                size={30}
+                                color={"#f44336"}
+                                onClick={() => {
+                                    handlerToogle(editable, setEditable)
+                                }}
+                            />
+                        </div>
+                    </span>
                     <TextArea
                         value={descriptionEd}
                         onChange={(event) => { setDescriptionEd(event.target.value) }}
@@ -109,22 +127,6 @@ export function Article({ title, tags = [], anuId, description = String, autor =
                         />
                     </div>
                 </form>
-                <div className="actions">
-                    <LuCheckCircle
-                        size={30}
-                        color={"#09B980"}
-                        onClick={() => {
-                            handlerUpdate();
-                        }}
-                    />
-                    <LuXCircle
-                        size={30}
-                        color={"#f44336"}
-                        onClick={() => {
-                            handlerToogle(editable, setEditable)
-                        }}
-                    />
-                </div>
             </Container>
         );
     }
@@ -133,7 +135,27 @@ export function Article({ title, tags = [], anuId, description = String, autor =
     return (
         <Container>
             <div className={"content"}>
-                <h1 className={"title"}>Título: {title}</h1>
+                <span className={"head"}>
+                    <h1 className={"title"}>Título: {title}</h1>
+                    <div className={"actions"}>
+                        <span className={"svg"}>
+                            <LuPenSquare
+                                size={30}
+                                color={"#09B980"}
+                                onClick={() => {
+                                    handlerToogle(editable, setEditable);
+                                }} />
+                        </span>
+                        <span className={"svg"}>
+                            <LuDelete
+                                size={30}
+                                color={"#f44336"}
+                                onClick={() => {
+                                    handlerDelete();
+                                }} />
+                        </span>
+                    </div>
+                </span>
                 <h3>Autor: {autor}</h3>
                 <div className={"description"}
                     onClick={() =>
@@ -148,24 +170,6 @@ export function Article({ title, tags = [], anuId, description = String, autor =
                         tags.map(tag => <span key={tag}>{tag}</span>)
                     }
                 </div>
-            </div>
-            <div className={"actions"}>
-                <span className={"svg"}>
-                    <LuPenSquare
-                        size={30}
-                        color={"#09B980"}
-                        onClick={() => {
-                            handlerToogle(editable, setEditable);
-                        }} />
-                </span>
-                <span className={"svg"}>
-                    <LuDelete
-                        size={30}
-                        color={"#f44336"}
-                        onClick={() => {
-                            handlerDelete();
-                        }} />
-                </span>
             </div>
         </Container>
     )

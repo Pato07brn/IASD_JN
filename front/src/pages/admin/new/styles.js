@@ -40,4 +40,20 @@ export const Container = styled.main`
         }
     }
 
+    @media screen and (max-width: 1024px){
+        .form{
+            width: 80vw;
+        }
+    }
+    @media screen and (max-width: 425px){
+        .form{
+            width: 95vw;
+        }
+        .title{
+            > h1{
+                font-size: 1.6em;
+            }
+        }
+    }
+
 `;

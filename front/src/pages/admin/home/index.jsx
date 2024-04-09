@@ -1,17 +1,13 @@
-import { AcessProvider } from "../../../hooks/acess";
-
-
 import { Header } from "../../../components/Admin/Header";
-import { Article } from "../../../components/Admin/Article";
 import { Content } from "../../../components/Admin/Content";
 import { Container } from "./styles";
-import { Scroolbar } from "../../../components/Admin/Scroolbar";
+import { NavBar } from "../../../components/Admin/NavBar";
 
 export function Home() {
     
     return (
         <Container>
-                <Scroolbar />
+                <NavBar />
                 <Header />
                 <Content>
                 </Content>
