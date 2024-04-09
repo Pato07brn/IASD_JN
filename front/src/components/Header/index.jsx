@@ -6,11 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { Container } from "./styles"
 import img_logo from "../../assets/logo-iasd-preto.svg"
 import img_salvemos from "../../assets/Salvemos-ct.png";
-import bg_nvabar from "../../assets/bg_navbar.png"
-
 
 export function Header() {
-    
     const navigate = useNavigate()
 
     const [width, setWidth] = useState(window.innerWidth);
