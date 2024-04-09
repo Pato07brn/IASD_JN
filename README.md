@@ -20,14 +20,19 @@ Este portal de Notícias ofere ou oferecerá:
 
 - [x] Autenticação de usuários
 - [x] Conteúdos dinámicos do Youtube
-- [ ] CRUD diretamente do servidor
-- [ ] Administração dinâmica dos conteúdos
+- [x] CRUD diretamente do servidor
+- [x] Administração dinâmica dos conteúdos
 
 Ainda a fazer
 
-- [ ] Melhorar a parte visual
-- [ ] Arrumar o background
-- [ ] Métodos e funcionalidades de CRUD
+- [x] Melhorar a parte visual
+- [x] Arrumar o background
+- [x] Métodos e funcionalidades de CRUD
+- [ ] Adicionar no Bd as novas tabelas
+- [ ] Criar rota para subir as imagens
+- [ ] Dinamizar os conteúdos na página
+- [ ] Criar método para adicionar novos usuários;
+- [ ] Criar filtros no admin e front
 
 
 ## Instalação
