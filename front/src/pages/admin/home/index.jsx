@@ -9,8 +9,7 @@ export function Home() {
         <Container>
                 <NavBar />
                 <Header />
-                <Content>
-                </Content>
+                <Content />
         </Container>
     )
 }

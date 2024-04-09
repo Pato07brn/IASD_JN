@@ -14,7 +14,7 @@ class Sessions {
             doc.data()
         ));
 
-        return res.status(202).json({ show });
+        return res.status(200).json({ show });
     }
 
 }

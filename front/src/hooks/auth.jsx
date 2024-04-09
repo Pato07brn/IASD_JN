@@ -25,7 +25,7 @@ function AuthProvider({ children }) {
             })
     }
 
-    async function SinOut() {
+    async function SignOut() {
         getAuth().signOut().then(() => {
             localStorage.removeItem("@IASDJNAuthUser:");
             localStorage.removeItem("@IASD_DATA:");
@@ -50,7 +50,7 @@ function AuthProvider({ children }) {
     }, [])
 
     return (
-        <AuthContext.Provider value={{ SignIn, user: data.accessToken, SinOut }}>
+        <AuthContext.Provider value={{ SignIn, user: data.accessToken, SignOut }}>
             {children}
         </AuthContext.Provider>
     )

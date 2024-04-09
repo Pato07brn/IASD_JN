@@ -42,24 +42,26 @@ export function Content() {
                     width="auto"
                     title={"Novo: " + bd}
                     bcColor={"#d18121"}
-                    onClick={()=>{
+                    onClick={() => {
                         navigate("./new")
                     }}
                 />
             </nav>
-            {
-                data &&
-                data.map(data => (
-                    <Article
-                        key={data.id}
-                        anuId={data.id}
-                        title={data.title}
-                        autor={data.autor}
-                        description={data.description}
-                        tags={data.tags}
-                    />
-                ))
-            }
+            <main>
+                {
+                    data &&
+                    data.map(data => (
+                        <Article
+                            key={data.id}
+                            anuId={data.id}
+                            title={data.title}
+                            autor={data.autor}
+                            description={data.description}
+                            tags={data.tags}
+                        />
+                    ))
+                }
+            </main>
         </Container>
     )
 }
