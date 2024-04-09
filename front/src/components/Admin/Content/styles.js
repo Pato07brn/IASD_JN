@@ -2,6 +2,12 @@ import { styled } from "styled-components"
 
 export const Container = styled.div`
     overflow-y: auto;
+    > main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     nav{     
         display: flex;
         align-items: center;
@@ -22,6 +28,6 @@ export const Container = styled.div`
                 margin: 10px;
                 font-size: 1.5em;
             }
-    }
+        }
     }
 `;

@@ -1,4 +1,4 @@
-import { Route, Routes, BrowserRouter, HashRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import { AdmRoutes } from "./adm.routes"
 import { AppRoutes } from "./app.routes"
