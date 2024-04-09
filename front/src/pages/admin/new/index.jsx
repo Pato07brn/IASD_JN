@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { UseAcess } from "../../../hooks/acess";
 import { api } from "../../../services/api";
 
+import { Header } from "../../../components/Admin/Header";
+
 import { Input } from "../../../components/Input";
 import { Button } from "../../../components/Button";
 import { TextArea } from "../../../components/TextArea";
@@ -14,9 +16,9 @@ export function New() {
     const { updateLocalData } = UseAcess();
     const [title, setTitle] = useState();
     const [description, setDescription] = useState();
-    
+
     const navigate = new useNavigate();
-    
+
     //Tags
     const [tags, setTags] = useState([]);
     const [newTag, setNewTag] = useState("");
@@ -48,54 +50,56 @@ export function New() {
     }
 
     return (
-        <Container>
+        <>
+            <Header/>
+            <Container>
+                <form className="form">
+                    <div className={"title"}>
+                        <h1 >Cadastrar novo </h1>
+                        <ButtonText title={"voltar"} onClick={() => { navigate(-1) }} />
+                    </div>
+                    <div>
+                        <Input
+                            type={"text"}
+                            placeholder={"Título"}
+                            required={true}
+                            size={"1.5em"}
+                            onChange={(event) => {
+                                setTitle(event.target.value)
+                            }}
+                        />
+                        <TextArea
+                            placeholder={"Descrição"}
+                            required={true}
+                            onChange={(event) => {
+                                setDescription(event.target.value)
+                            }}
+                        >
+                        </TextArea>
+                    </div>
+                    <div className="marcadores">
+                        <h2>Marcadores</h2>
+                        {
+                            tags.map((tag, index) => {
+                                return <NoteItem
+                                    key={String(index)}
+                                    value={tag}
+                                    onClick={() => handlerRemoveTag(tag)}
+                                />
+                            })
+                        }
+                        <NoteItem
+                            $isnew
+                            value={newTag}
+                            onChange={event => setNewTag(event.target.value)}
+                            placeholder={"Nova Tag"}
+                            onClick={handlerAddTag}
+                        />
+                    </div>
 
-            <form className="form">
-                <div className={"title"}>
-                    <h1 >Cadastrar novo </h1>
-                    <ButtonText title={"voltar"} onClick={() => { navigate(-1) }} />
-                </div>
-                <div>
-                    <Input
-                        type={"text"}
-                        placeholder={"Título"}
-                        required={true}
-                        size={"1.5em"}
-                        onChange={(event) => {
-                            setTitle(event.target.value)
-                        }}
-                    />
-                    <TextArea
-                        placeholder={"Descrição"}
-                        required={true}
-                        onChange={(event) => {
-                            setDescription(event.target.value)
-                        }}
-                    >
-                    </TextArea>
-                </div>
-                <div className="marcadores">
-                    <h2>Marcadores</h2>
-                    {
-                        tags.map((tag, index) => {
-                            return <NoteItem
-                                key={String(index)}
-                                value={tag}
-                                onClick={() => handlerRemoveTag(tag)}
-                            />
-                        })
-                    }
-                    <NoteItem
-                        $isnew
-                        value={newTag}
-                        onChange={event => setNewTag(event.target.value)}
-                        placeholder={"Nova Tag"}
-                        onClick={handlerAddTag}
-                    />
-                </div>
-
-                <Button type="button" title={"Cadastrar"} onClick={() => { handlerSubmit() }} />
-            </form>
-        </Container>
+                    <Button type="button" title={"Cadastrar"} onClick={() => { handlerSubmit() }} />
+                </form>
+            </Container>
+        </>
     )
 }

@@ -5,10 +5,11 @@ export const Container = styled.div`
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
     color:  ${({ theme }) => theme.COLORS.WHITE};
     border-radius: 25px;
-    margin: 1em;
+    margin: 1em 0em;
     padding: 1em;
     justify-content: space-around;
     align-items: start;
+    width: 80%;
 
     .title{
         font-size: 2em;
@@ -65,5 +66,11 @@ export const Container = styled.div`
         > svg{
             margin: 0.5em;
         }
+    }
+    @media screen and (max-width: 425px){
+        width: 95%;
+    }
+    @media screen and (min-width: 1024px){
+        width: 60%;
     }
 `;

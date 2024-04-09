@@ -9,13 +9,13 @@ import { Container } from "./styles";
 
 export function Header() {
     const { setNavBar } = UseAcess();
-    const { SinOut } = useAuth();
+    const { SignOut } = useAuth();
     const [userName, setUserName] = useState("");
 
     const [width, setWidth] = useState(window.innerWidth);
     function upWidht() { setWidth(window.innerWidth) }
     window.addEventListener('resize', upWidht);
-    
+
     useEffect(() => {
         upWidht();
         console.log(width);
@@ -29,10 +29,7 @@ export function Header() {
     useEffect(() => {
         async function getName() {
             const name = await api.post("/session");
-            setUserName(name.data.show[0].nome);
-            if (!name) {
-                SinOut();
-            }
+            name.status == 200 ? setUserName(name.data.show[0].nome) : SignOut();
         }
         getName();
     }, []);
@@ -46,7 +43,7 @@ export function Header() {
                     Bem-vindo: {userName}
                 </div>
                 <div>
-                    <CiLogout size={30} onClick={SinOut} />
+                    <CiLogout size={30} onClick={SignOut} />
                 </div>
             </main>
         </Container>
