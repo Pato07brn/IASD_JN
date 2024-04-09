@@ -9,19 +9,15 @@ import { Container } from "./styles";
 
 export function Header() {
     const { setNavBar } = UseAcess();
-<<<<<<< HEAD
+
     const { SinOut } = useAuth();
-=======
+
     const { SignOut } = useAuth();
->>>>>>> 6315f303a84becda09185a576fd0a7ae47e2b2a9
     const [userName, setUserName] = useState("");
 
     const [width, setWidth] = useState(window.innerWidth);
     function upWidht() { setWidth(window.innerWidth) }
-    window.addEventListener('resize', upWidht);
-<<<<<<< HEAD
-    
-=======
+    window.addEventListener('resize', upWidht)
 
     useEffect(() => {
         upWidht();
@@ -33,7 +29,6 @@ export function Header() {
         setNavBar(true);
     }
 
->>>>>>> 6315f303a84becda09185a576fd0a7ae47e2b2a9
     useEffect(() => {
         upWidht();
         console.log(width);
@@ -47,14 +42,7 @@ export function Header() {
     useEffect(() => {
         async function getName() {
             const name = await api.post("/session");
-<<<<<<< HEAD
-            setUserName(name.data.show[0].nome);
-            if (!name) {
-                SinOut();
-            }
-=======
             name.status == 200 ? setUserName(name.data.show[0].nome) : SignOut();
->>>>>>> 6315f303a84becda09185a576fd0a7ae47e2b2a9
         }
         getName();
     }, []);

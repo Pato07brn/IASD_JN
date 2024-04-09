@@ -10,7 +10,6 @@ import bg_nvabar from "../../assets/bg_navbar.png"
 
 
 export function Header() {
-    
     const navigate = useNavigate()
 
     const [width, setWidth] = useState(window.innerWidth);

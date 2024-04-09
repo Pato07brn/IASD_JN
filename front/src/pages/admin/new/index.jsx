@@ -13,6 +13,7 @@ import { ButtonText } from "../../../components/ButtonText";
 import { Container } from "./styles";
 
 export function New() {
+    const navigate = useNavigate()
     const { updateLocalData } = UseAcess();
     const [title, setTitle] = useState();
     const [description, setDescription] = useState();
