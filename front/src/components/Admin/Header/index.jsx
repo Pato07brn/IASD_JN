@@ -11,7 +11,7 @@ export function Header() {
     const { setNavBar } = UseAcess();
     const { SignOut } = useAuth();
 
-    const [userName, setUserName] = useState("");
+    const [userName, setUserName] = useState(null);
 
     const [width, setWidth] = useState(window.innerWidth);
     function upWidht() { setWidth(window.innerWidth) }
@@ -41,7 +41,7 @@ export function Header() {
         async function getName() {
             const name = await api.post("/session");
             name.status == 200 ? setUserName(name.data.show[0].nome) : SignOut();
-            if(userName == ""){
+            if(userName){
                 SignOut()
             }
         }
