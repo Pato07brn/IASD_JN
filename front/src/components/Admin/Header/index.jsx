@@ -9,10 +9,8 @@ import { Container } from "./styles";
 
 export function Header() {
     const { setNavBar } = UseAcess();
-
-    const { SinOut } = useAuth();
-
     const { SignOut } = useAuth();
+
     const [userName, setUserName] = useState("");
 
     const [width, setWidth] = useState(window.innerWidth);
@@ -43,7 +41,11 @@ export function Header() {
         async function getName() {
             const name = await api.post("/session");
             name.status == 200 ? setUserName(name.data.show[0].nome) : SignOut();
+            if(userName == ""){
+                SignOut()
+            }
         }
+
         getName();
     }, []);
 

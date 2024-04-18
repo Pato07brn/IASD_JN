@@ -1,7 +1,8 @@
-import { Header } from "../../../components/Admin/Header";
-import { Content } from "../../../components/Admin/Content";
 import { Container } from "./styles";
+
+import { Header } from "../../../components/Admin/Header";
 import { NavBar } from "../../../components/Admin/NavBar";
+import { Content } from "../../../components/Admin/Content";
 
 export function Home() {
     

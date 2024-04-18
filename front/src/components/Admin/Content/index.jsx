@@ -5,13 +5,15 @@ import { useEffect, useState } from "react";
 
 import { Button } from "../../Button";
 import { Article } from "../../Admin/Article";
+import { Loading } from "../../../components/Admin/Loading";
 import { Container } from "./styles";
+
 
 export function Content() {
     const navigate = new useNavigate();
 
     const { bd, localData, updateLocalData } = UseAcess();
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
 
     //Verifica o localStorage
     useEffect(() => {
@@ -31,6 +33,7 @@ export function Content() {
                 }
             }
         }
+        console.log(data);
         reponseData();
     }, [localData]);
 
@@ -62,6 +65,7 @@ export function Content() {
                     ))
                 }
             </main>
+            { data ?  "" : <Loading title={"Aguardando Servidor"} /> }  
         </Container>
     )
 }

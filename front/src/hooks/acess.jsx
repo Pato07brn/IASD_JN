@@ -1,6 +1,5 @@
 import { createContext, useContext, useState } from "react";
 
-
 export const AcessContext = createContext({})
 
 function AcessProvider({ children }) {
@@ -14,9 +13,9 @@ function AcessProvider({ children }) {
         bdSet(page);
     }
 
-    function updateLocalData(state) {
-        setLocalData(state)
-        if (state == false) {
+    function updateLocalData(data) {
+        setLocalData(data)
+        if (data == false) {
             localStorage.removeItem("@IASD_DATA:");
             return
         }
