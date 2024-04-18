@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 dist
+src/services/api.js
 dist-ssr
 *.local
 
